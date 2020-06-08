@@ -50,7 +50,7 @@ client.on('message', (message) => {
       .addField('Inline field title', 'Some value here1\nSome value here2\nSome value here3\n')
       .addBlankField()
       .setTimestamp()
-      .setFooter('나긋해가 만듬', img)
+      .setFooter('say', img)
 
     message.channel.send(embed)
   } else if(message.content == 'embed2') {
@@ -83,7 +83,7 @@ client.on('message', (message) => {
       let contents = message.content.slice('!전체공지'.length);
       message.member.guild.members.array().forEach(x => {
         if(x.user.bot) return;
-        x.user.send(`<@${message.author.id}> ${contents}`);
+        x.user.send(`${contents}`);
       });
   
       return message.reply('공지를 전송했습니다.');
